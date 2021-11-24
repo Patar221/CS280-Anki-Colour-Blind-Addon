@@ -1,0 +1,5 @@
+:root {
+    --newCount: [newCountColour];
+    --learnCount: [learnCountColour];
+    --reviewCount: [reviewCountColour];
+}

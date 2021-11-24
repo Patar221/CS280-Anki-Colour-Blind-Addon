@@ -1,0 +1,37 @@
+:root {
+    --newCount: [newCountColour];
+    --learnCount: [learnCountColour];
+    --reviewCount: [reviewCountColour];
+}
+
+.review-count {
+    color: var(--reviewCount);
+}
+
+.new-count {
+    color: var(--newCount);
+}
+
+.learn-count {
+    color: var(--learnCount);
+}
+
+.zero-count {
+    color: var(--zero-count);
+}
+
+.nightMode .review-count {
+    color: var(--reviewCount);
+}
+
+.nightMode .new-count {
+    color: var(--newCount);
+}
+
+.nightMode .learn-count {
+    color: var(--learnCount);
+}
+
+.nightMode .zero-count {
+    color: var(--zero-count);
+}

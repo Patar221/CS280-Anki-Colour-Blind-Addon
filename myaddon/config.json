@@ -1,0 +1,18 @@
+{
+  "currentTheme": "theme2",
+  "theme1": {
+    "newColour": "#34ebeb",
+    "learnColour": "#e2eb34",
+    "reviewColour": "#407a43"
+  },
+  "theme2": {
+    "newColour": "#0400f5",
+    "learnColour": "#f58300",
+    "reviewColour": "#29f500"
+  },
+  "theme3": {
+    "newColour": "#5c02bd",
+    "learnColour": "#a1a122",
+    "reviewColour": "#00db21"
+  }
+}
