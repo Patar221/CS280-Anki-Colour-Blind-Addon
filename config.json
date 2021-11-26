@@ -1,18 +1,28 @@
 {
-  "currentTheme": "theme2",
-  "theme1": {
-    "newColour": "#34ebeb",
-    "learnColour": "#e2eb34",
-    "reviewColour": "#407a43"
+  "currentTheme": "General",
+  "General": {
+    "newColour": "#56B4DF",
+    "learnColour": "#009E73",
+    "reviewColour": "#D55C00"
   },
-  "theme2": {
-    "newColour": "#0400f5",
-    "learnColour": "#f58300",
-    "reviewColour": "#29f500"
+  "Deuteranopia": {
+    "newColour": "#FFC020",
+    "learnColour": "#36a8ff",
+    "reviewColour": "#FDD7CA"
   },
-  "theme3": {
-    "newColour": "#5c02bd",
-    "learnColour": "#a1a122",
-    "reviewColour": "#00db21"
+  "Protanopia": {
+    "newColour": "#367DFB",
+    "learnColour": "#E3CA0B",
+    "reviewColour": "#9DAFF1"
+  },
+  "Tritanopia": {
+    "newColour": "#72ECFF",
+    "learnColour": "#138A91",
+    "reviewColour": "#FC1903"
+  },
+  "Monochromacy": {
+    "newColour": "#FFFFFF",
+    "learnColour": "#737373",
+    "reviewColour": "#A8A7A7"
   }
 }
