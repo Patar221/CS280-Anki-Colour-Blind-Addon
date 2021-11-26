@@ -1,28 +1,35 @@
 {
   "currentTheme": "General",
-  "General": {
-    "newColour": "#56B4DF",
-    "learnColour": "#009E73",
-    "reviewColour": "#D55C00"
-  },
-  "Deuteranopia": {
-    "newColour": "#FFC020",
-    "learnColour": "#36a8ff",
-    "reviewColour": "#FDD7CA"
-  },
-  "Protanopia": {
-    "newColour": "#367DFB",
-    "learnColour": "#E3CA0B",
-    "reviewColour": "#9DAFF1"
-  },
-  "Tritanopia": {
-    "newColour": "#72ECFF",
-    "learnColour": "#138A91",
-    "reviewColour": "#FC1903"
-  },
-  "Monochromacy": {
-    "newColour": "#FFFFFF",
-    "learnColour": "#737373",
-    "reviewColour": "#A8A7A7"
-  }
+  "themes": [
+    {
+      "name": "General",
+      "newColour": "#56B4DF",
+      "learnColour": "#009E73",
+      "reviewColour": "#D55C00"
+    },
+    {
+      "name": "Deuteranopia",
+      "newColour": "#FFC020",
+      "learnColour": "#36a8ff",
+      "reviewColour": "#FDD7CA"
+    },
+    {
+      "name": "Protanopia",
+      "newColour": "#367DFB",
+      "learnColour": "#E3CA0B",
+      "reviewColour": "#9DAFF1"
+    },
+    {
+      "name": "Tritanopia",
+      "newColour": "#72ECFF",
+      "learnColour": "#138A91",
+      "reviewColour": "#FC1903"
+    },
+    {
+      "name": "Monochromacy",
+      "newColour": "#FFFFFF",
+      "learnColour": "#737373",
+      "reviewColour": "#A8A7A7"
+    }
+  ]
 }
