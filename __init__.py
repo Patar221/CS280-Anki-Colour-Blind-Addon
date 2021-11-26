@@ -41,11 +41,20 @@ gui_hooks.webview_will_set_content.append(replace_css)
 
 ######################################################################################################################################################
 
+# Loops through config file to get current theme data
+def get_current_theme(config):
+    for theme in config['themes']:
+        if currentTheme == theme['name']:
+            return theme
 
 with open(f'{addonPath}/config.json') as f:
   configData = json.load(f)
 
-themeData = configData[configData['currentTheme']]
+currentTheme = configData['currentTheme']
+themes = configData['themes']
+themeData = get_current_theme(configData)
+
+
 
 def edit_css_files():
     #aqt.utils.showInfo(themeData['learnColour'])
@@ -66,17 +75,56 @@ def edit_css_files():
                 file.write(fileData)
 
 #Menu Options
-def options() -> None:
-    # get the number of cards in the current collection, which is stored in
-    # the main window
-    cardCount = mw.col.cardCount()
-    # show a message box
-    showInfo("Card count: %d" % cardCount)
+def changeTheme(theme) -> None:
+    # Read in the file
+    with open(f"{addonPath}/config.json", 'r') as file:
+        fileData = file.read()
 
-# create a new menu item, "test"
-action = QAction("Colour Options", mw)
-# set it to call testFunction when it's clicked
-qconnect(action.triggered, options)
-# and add it to the tools menu
-mw.form.menuTools.addAction(action)
+    # Replace the target string
+    fileData = re.sub('(?<="currentTheme": ")(.*)(?=")', theme, fileData)
+
+    # Write the file out again
+    with open(f"{addonPath}/config.json", 'w') as file:
+        file.write(fileData)
+
+    aqt.utils.showInfo("Restart Anki to apply changes to the theme")
+
+# Create CBM menu
+menu = QMenu(('CBM'), mw)
+mw.form.menubar.addMenu(menu)
+
+# Add Theme Selector menu
+themeSelect = QMenu("Select Theme", mw)
+menu.addMenu(themeSelect)
+
+general = QAction('General', mw)
+general.triggered.connect(lambda: changeTheme('General'))
+themeSelect.addAction(general)
+
+deuteranopia = QAction('Deuteranopia', mw)
+deuteranopia.triggered.connect(lambda: changeTheme('Deuteranopia'))
+themeSelect.addAction(deuteranopia)
+
+protanopia = QAction('Protanopia', mw)
+protanopia.triggered.connect(lambda: changeTheme('Protanopia'))
+themeSelect.addAction(protanopia)
+
+tritanopia = QAction('Tritanopia', mw)
+tritanopia.triggered.connect(lambda: changeTheme('Tritanopia'))
+themeSelect.addAction(tritanopia)
+
+monochromacy = QAction('Monochromacy', mw)
+monochromacy.triggered.connect(lambda: changeTheme('Monochromacy'))
+themeSelect.addAction(monochromacy)
+
+# Currently does not work
+# Used to dynamically create list of themes
+'''
+# Create list of themes
+for theme in themes:
+    themeName = theme['name']
+    action = QAction(themeName, mw)
+    action.triggered.connect(lambda: changeTheme(themeName))
+    themeSelect.addAction(action)
+'''
 
